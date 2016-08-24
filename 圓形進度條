@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+
+#wrapper { width: 100px;
+		   height: 100px; 
+		   position: absolute;
+		    clip: rect(0px, 100px, 100px, 50px);
+
+		}
+.wrapper2 { width: 100px;
+		   height: 100px; 
+		   position: absolute;
+		    clip: rect(0px, 50px, 100px, 0px);
+		}
+
+#showleft { width: 100px;
+		   height: 100px; 
+		   position: absolute;
+		    clip: rect(0px, 100px, 100px, 50px);
+
+		}
+
+.circle { width: 80px; 
+	      height: 80px; 
+	      border: 10px solid green; 
+	      border-radius: 50px; 
+	      position: absolute;  }
+
+.circle[data-anim~=left]{
+}
+.circle[data-anim~=right]{
+	
+}
+</style>
+<body>
+
+<div id="wrapper" class="wrapper" data-anim="base wrapper"> 
+<div  class="wrapper2" data-anim="base wrapper"> 
+  <div class="circle" data-anim="base left"></div> 
+  <div class="circle" data-anim="base right"></div> 
+</div>
+</div>
+
+
+<div  id="showleft" data-anim="base wrapper"> 
+  <div class="circle" data-anim="base left"></div> 
+</div>
+
+</body>
+<script type="text/javascript">
+
+//隱藏最上方大圓
+document.querySelector('#showleft').style.display = 'none'
+
+
+var bottomDeg = 0;
+var bottomDeg1 = 0;
+
+//轉右側clip
+document.querySelector('.wrapper2').style.transform ='rotate('+bottomDeg+'deg)';
+
+//為了讓右側在度數超過180後持續顯示，所以讓原本覆蓋上面的圓從隱藏改為顯示
+document.querySelector('#showleft').style.display = '';
+//開始轉左邊，所以讓左側的clip開始轉
+document.querySelector('#wrapper').style.transform ='rotate('+bottomDeg1+'deg)';
+
+
+
+
+</script>
+</html>
