@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #circle1 {
+z-index:-10;
+
+/*因出現莫名細邊框固調整位置  */
+top:2px;
+left:3px;
+
+
+    position:absolute;
+    width: 200px;
+    height: 100px;
+    background-color: #efefef; /* Can be set to transparent */
+    border:50px green solid;
+    -webkit-border-radius: 500px 500px 0 0;
+    clip:rect(0px,350px,148px,0px); 
+}
+    
+        #circle2 {
+
+            transform: rotate(0deg);
+            clip:rect(0px,500px,150px,0px); 
+    position:absolute;
+    width: 305px;
+    height: 305px;
+    background-color: white; /* Can be set to transparent */
+    -webkit-border-radius: 500px ;
+}
+    
+    </style>
+</head>
+<body>
+<div style="left:200px;position:absolute;width:500px;height:500px;top:100px">
+  <div  id="circle2"></div>
+  <div id="circle1"></div>
+</div>    
+</body>
+</html>
