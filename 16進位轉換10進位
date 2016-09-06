@@ -1,0 +1,29 @@
+function test(s){
+  var total=0;
+  var sec = 0;
+  var eng = 0;
+
+  for(i=s.length-1;i>=0;i--){
+    switch (s[i])
+    {
+    case "a":eng = 10;
+       break;
+    case "b":eng = 11;
+       break;
+    case "c":eng = 12;
+       break;
+    case "d":eng = 13;
+       break;
+    case "e":eng = 14;
+       break;
+    case "f":eng = 15;
+       break;                     
+    default: eng = parseInt(s[i]);
+    };
+
+    total += eng*Math.pow(16,sec);
+    sec += 1;
+  }
+
+  console.log(total)
+}
