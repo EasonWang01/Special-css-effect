@@ -1,7 +1,8 @@
 
 //1.原始方法
 /*  parseInt(hexString, 16)*/
-          或是
+    
+    16轉回10進位
 /*  Number(hexString).toString( 16 );*/
 
 //2.自己寫一個
